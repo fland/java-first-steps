@@ -24,5 +24,41 @@ public class Student {
         this.height = height;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", className='" + className + '\'' +
+                ", birthDate=" + birthDate +
+                ", weight=" + weight +
+                ", height=" + height +
+                '}';
+    }
+
     //    todo: put student data structure here
 }
