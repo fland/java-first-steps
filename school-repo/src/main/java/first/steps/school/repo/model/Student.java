@@ -8,18 +8,21 @@ import java.util.Date;
  */
 public class Student {
 
-    private String firstName, lastName, className;
+    private String firstName;
+    private String lastName;
+    private String className;
     private Date birthDate;
-    private Double hight, weight;
+    private float weight;
+    private int height;
 
-    public Student(String firstName, String lastName, String className, Date birthDate, Double hight, Double weight) {
+    public Student(String firstName, String lastName, String className, Date birthDate, float weight, int height) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.className = className;
         this.birthDate = birthDate;
-        this.hight = hight;
         this.weight = weight;
+        this.height = height;
     }
 
-//    todo: put student data structure here
+    //    todo: put student data structure here
 }
