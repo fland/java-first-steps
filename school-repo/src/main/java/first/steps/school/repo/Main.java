@@ -14,6 +14,12 @@ public class Main {
         System.out.println("Hello world!");
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         System.out.println(student.getFirstName());
+        student.setClassName("B2");
+        System.out.println(student);
+        student.setWeight(55);
+        System.out.println(student);
+        student.setWeight(-10);
+        System.out.println(student);
     }
 
 
