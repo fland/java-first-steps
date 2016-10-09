@@ -16,9 +16,11 @@ public class Main {
         System.out.println(student.getFirstName());
         student.setClassName("B2");
         System.out.println(student);
-        student.setWeight(55);
+        student.setHeight(150);
         System.out.println(student);
-        student.setWeight(-10);
+        student.setHeight(-10);
+        System.out.println(student);
+        student.setHeight(300);
         System.out.println(student);
     }
 

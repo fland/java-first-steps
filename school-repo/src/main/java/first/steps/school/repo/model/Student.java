@@ -51,14 +51,26 @@ public class Student {
     }
 
     public void setFirstName(String firstName) {
+        if (firstName.length() > 50) {
+            System.out.println("First Name should contain less than 50 characters. First Name: " + firstName);
+            return;
+        }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
+        if (lastName.length() > 30) {
+            System.out.println("Last Name should contain less than 30 characters. Last Name: " + lastName + "; length = " + lastName.length());
+            return;
+        }
         this.lastName = lastName;
     }
 
     public void setClassName(String className) {
+        if (className.length() != 2) {
+            System.out.println("Class should contain only 2 characters. Class: " + className);
+            return;
+        }
         this.className = className;
     }
 
@@ -75,6 +87,10 @@ public class Student {
     }
 
     public void setHeight(int height) {
+        if (height <= 0 || height > 300) {
+            System.out.println("Height value should be between 0 and 300. Height = " + height);
+            return;
+        }
         this.height = height;
     }
 
