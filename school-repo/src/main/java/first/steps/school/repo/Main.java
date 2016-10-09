@@ -1,5 +1,6 @@
 package first.steps.school.repo;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import first.steps.school.repo.model.Group;
 import first.steps.school.repo.model.Student;
 
@@ -42,6 +43,24 @@ public class Main {
         System.out.println(group1.getStudents());
         students1.clear();
         System.out.println(group1.getStudents());
+
+        Group group2 = new Group();
+        group2.addStudent(new Student("A2", "B2", "2B", new Date(), 57.f, 172));
+        System.out.println(group2.getStudents());
+        group2.deleteAllStudents();
+        System.out.println(group2.getStudents());
+
+        group2.addStudent(new Student("0A", "0B", "0C", new Date(), 57.f, 172));
+        group2.addStudent(new Student("1A", "1B", "1C", new Date(), 57.f, 172));
+        group2.addStudent(new Student("2A", "2B", "2C", new Date(), 57.f, 172));
+        System.out.println(group2.getStudents());
+        group2.deleteStudentByIndex(0);
+        System.out.println(group2.getStudents());
+        group2.deleteStudentByIndex(0);
+        System.out.println(group2.getStudents());
+
+
+
     }
 
 

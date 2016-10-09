@@ -12,6 +12,7 @@ public class Group {
     private final List<Student> students;
 
     public Group() {
+
         students = new ArrayList<Student>();
     }
 
@@ -23,12 +24,20 @@ public class Group {
         return new ArrayList<Student>(students);
     }
 
-    public void addStudent(Student student){
-        if(student == null){
+    public void addStudent(Student student) {
+        if (student == null) {
             System.out.println("Student shouldn't be null");
             return;
         }
 
         students.add(student);
+    }
+
+    public void deleteAllStudents() {
+        students.clear();
+    }
+
+    public void deleteStudentByIndex(int i) {
+        students.remove(i);
     }
 }
