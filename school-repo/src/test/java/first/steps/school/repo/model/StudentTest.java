@@ -1,11 +1,9 @@
 package first.steps.school.repo.model;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.Random;
 
 import static org.junit.Assert.*;
 

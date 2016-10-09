@@ -1,7 +1,5 @@
 package first.steps.school.repo.model;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.Date;
 
 /**
@@ -105,6 +103,4 @@ public class Student {
                 ", height=" + height +
                 '}';
     }
-
-    //    todo: put student data structure here
 }
