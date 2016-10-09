@@ -21,7 +21,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetFirstNameLongValue() {
+    public void testSetFirstNameExceedMaxLength() {
         Student student = new Student("Anastasiia", "Mor", "B1", new Date(), 60, 170);
         assertEquals("Anastasiia", student.getFirstName());
         student.setFirstName("Anna Bertha Cecilia Diana Emily Fanny Gertrude Hypatia");
@@ -29,7 +29,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetLasttNameValidValue() {
+    public void testSetLastNameValidValue() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("Mordovets", student.getLastName());
         student.setLastName("Johnson");
@@ -37,7 +37,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetLastNameLongValue() {
+    public void testSetLastNameExceedMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("Mordovets", student.getLastName());
         student.setLastName("Testtesttest-testetstetstetstestetstes");
@@ -45,7 +45,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSeClassNameValidValue() {
+    public void testSetClassNameValidValue() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("B1", student.getClassName());
         student.setClassName("A9");
@@ -53,7 +53,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSeClassNameInvalidValue() {
+    public void testSetClassNameExceedMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("B1", student.getClassName());
         student.setClassName("A10");
@@ -81,6 +81,14 @@ public class StudentTest {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(60, student.getWeight(), 0.001);
         student.setWeight(0);
+        assertEquals(60, student.getWeight(), 0.001);
+    }
+
+    @Test
+    public void testSetWeightUpperBoundaryValue() {
+        Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
+        assertEquals(60, student.getWeight(), 0.001);
+        student.setWeight(201);
         assertEquals(60, student.getWeight(), 0.001);
     }
 
@@ -113,7 +121,7 @@ public class StudentTest {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(170, student.getHeight());
         student.setHeight(301);
-        assertEquals(301, student.getHeight());
+        assertEquals(170, student.getHeight());
     }
 
 

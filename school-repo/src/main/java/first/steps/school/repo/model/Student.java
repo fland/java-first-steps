@@ -52,7 +52,7 @@ public class Student {
 
     public void setFirstName(String firstName) {
         if (firstName.length() > 50) {
-            System.out.println("First Name should contain less than 50 characters. First Name: " + firstName);
+            System.out.println("First Name should contain less than 50 characters. First Name: [" + firstName + "]; length = " + lastName.length());
             return;
         }
         this.firstName = firstName;
@@ -60,7 +60,7 @@ public class Student {
 
     public void setLastName(String lastName) {
         if (lastName.length() > 30) {
-            System.out.println("Last Name should contain less than 30 characters. Last Name: " + lastName + "; length = " + lastName.length());
+            System.out.println("Last Name should contain less than 30 characters. Last Name: [" + lastName + "]; length = " + lastName.length());
             return;
         }
         this.lastName = lastName;
@@ -68,7 +68,7 @@ public class Student {
 
     public void setClassName(String className) {
         if (className.length() != 2) {
-            System.out.println("Class should contain only 2 characters. Class: " + className);
+            System.out.println("Class should contain only 2 characters. Class: [" + className + "]");
             return;
         }
         this.className = className;
@@ -79,8 +79,8 @@ public class Student {
     }
 
     public void setWeight(float weight) {
-        if (weight <= 0) {
-            System.out.println("Weight value should be > 0. Weight = " + weight);
+        if (weight <= 0 || weight > 200) {
+            System.out.println("Weight value should be between 0 and 200 kg. Weight = " + weight);
             return;
         }
         this.weight = weight;
