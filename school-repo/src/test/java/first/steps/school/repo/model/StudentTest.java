@@ -1,9 +1,11 @@
 package first.steps.school.repo.model;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +26,7 @@ public class StudentTest {
     public void testSetFirstNameExceedMaxLength() {
         Student student = new Student("Anastasiia", "Mor", "B1", new Date(), 60, 170);
         assertEquals("Anastasiia", student.getFirstName());
-        student.setFirstName("Anna Bertha Cecilia Diana Emily Fanny Gertrude Hypatia");
+        student.setFirstName(RandomStringUtils.random(51));
         assertEquals("Anastasiia", student.getFirstName());
     }
 
