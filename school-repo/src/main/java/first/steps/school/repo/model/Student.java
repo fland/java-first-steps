@@ -52,7 +52,7 @@ public class Student {
 
     public void setFirstName(String firstName) {
         if (firstName.length() > 50) {
-            System.out.println("First Name should contain less than 50 characters. First Name: [" + firstName + "]; length = " + lastName.length());
+            System.out.println("First Name should contain less than 50 characters. First Name: [" + firstName + "]; length = " + firstName.length());
             return;
         }
         this.firstName = firstName;

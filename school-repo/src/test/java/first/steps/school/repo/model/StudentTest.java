@@ -23,7 +23,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetFirstNameExceedMaxLength() {
+    public void testSetFirstNameExceedingMaxLength() {
         Student student = new Student("Anastasiia", "Mor", "B1", new Date(), 60, 170);
         assertEquals("Anastasiia", student.getFirstName());
         student.setFirstName(RandomStringUtils.random(51));
@@ -39,10 +39,10 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetLastNameExceedMaxLength() {
+    public void testSetLastNameExceedingMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("Mordovets", student.getLastName());
-        student.setLastName("Testtesttest-testetstetstetstestetstes");
+        student.setLastName(RandomStringUtils.random(31));
         assertEquals("Mordovets", student.getLastName());
     }
 
@@ -55,10 +55,10 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetClassNameExceedMaxLength() {
+    public void testSetClassNameExceedingMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("B1", student.getClassName());
-        student.setClassName("A10");
+        student.setClassName(RandomStringUtils.random(3));
         assertEquals("B1", student.getClassName());
     }
 
@@ -87,7 +87,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetWeightUpperBoundaryValue() {
+    public void testSetWeightExceedingMaxValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(60, student.getWeight(), 0.001);
         student.setWeight(201);
@@ -119,7 +119,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testSetHeightUpperBoundaryValue() {
+    public void testSetHeightExceedingMaxValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(170, student.getHeight());
         student.setHeight(301);
