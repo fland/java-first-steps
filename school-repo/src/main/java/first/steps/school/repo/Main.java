@@ -60,7 +60,6 @@ public class Main {
         System.out.println(group2.getStudents());
 
 
-
     }
 
 

@@ -16,11 +16,13 @@ public class Group {
         students = new ArrayList<Student>();
     }
 
-    public Group(List<Student> inputStudents) {
-        students = new ArrayList<Student>(inputStudents);
+    public Group(List<Student> students) {
+
+        this.students = new ArrayList<Student>(students);
     }
 
     public List<Student> getStudents() {
+
         return new ArrayList<Student>(students);
     }
 
@@ -29,7 +31,6 @@ public class Group {
             System.out.println("Student shouldn't be null");
             return;
         }
-
         students.add(student);
     }
 
@@ -38,6 +39,14 @@ public class Group {
     }
 
     public void deleteStudentByIndex(int i) {
+        if(students.get(i)==null)
+            return;
+
         students.remove(i);
+    }
+
+    @Override
+    public int hashCode() {
+        return 3*(students.size() +42);
     }
 }
