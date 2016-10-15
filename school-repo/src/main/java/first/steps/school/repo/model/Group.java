@@ -12,17 +12,14 @@ public class Group {
     private final List<Student> students;
 
     public Group() {
-
         students = new ArrayList<Student>();
     }
 
     public Group(List<Student> students) {
-
         this.students = new ArrayList<Student>(students);
     }
 
     public List<Student> getStudents() {
-
         return new ArrayList<Student>(students);
     }
 
@@ -39,14 +36,14 @@ public class Group {
     }
 
     public void deleteStudentByIndex(int i) {
-        if(students.get(i)==null)
+        if (students.get(i) == null) {
             return;
-
+        }
         students.remove(i);
     }
 
     @Override
     public int hashCode() {
-        return 3*(students.size() +42);
+        return 3 * (students.size() + 42);
     }
 }
