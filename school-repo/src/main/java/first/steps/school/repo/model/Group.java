@@ -35,11 +35,12 @@ public class Group {
         students.clear();
     }
 
-    public void deleteStudentByIndex(int i) {
-        if (students.get(i) == null) {
+    public void deleteStudentByIndex(int index) {
+        if (index < 0) {
+            System.out.println("Index should be >= 0. Index = [" + index + "]");
             return;
         }
-        students.remove(i);
+        students.remove(index);
     }
 
     @Override

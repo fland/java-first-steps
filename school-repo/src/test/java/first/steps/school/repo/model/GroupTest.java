@@ -41,7 +41,6 @@ public class GroupTest {
         assertTrue(expectedStudents.containsAll(group.getStudents()));
     }
 
-
     @Test
     public void testAddStudentAddingNullValue() {
         Group group = new Group();
@@ -52,18 +51,41 @@ public class GroupTest {
 
     @Test
     public void testDeleteAllStudents() {
-        Group myGroup = new Group();
-        myGroup.addStudent(new Student("0A", "B", "1C", new Date(), 55.f, 170));
-        myGroup.addStudent(new Student("1A", "B", "1C", new Date(), 55.f, 170));
-        myGroup.deleteAllStudents();
-        assertEquals(0, myGroup.getStudents().size());
-
+        Group group = new Group();
+        group.addStudent(new Student("0A", "B", "1C", new Date(), 55.f, 170));
+        group.addStudent(new Student("1A", "1B", "2C", new Date(), 33.f, 180));
+        assertFalse(group.getStudents().isEmpty());
+        group.deleteAllStudents();
+        assertTrue(group.getStudents().isEmpty());
     }
 
     @Test
-    public void deleteStudentByIndex() {
-
-
+    public void testDeleteStudentByIndex() {
+        Group group = new Group();
+        Student student = new Student("0A", "B", "1C", new Date(), 55.f, 170);
+        group.addStudent(student);
+        group.addStudent(new Student("1A", "1B", "2C", new Date(), 33.f, 180));
+        assertTrue(group.getStudents().contains(student));
+        group.deleteStudentByIndex(0);
+        assertFalse(group.getStudents().contains(student));
     }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testDeleteStudentByIndexIndexGreaterThanCount() {
+        Group group = new Group();
+        group.addStudent(new Student("0A", "B", "1C", new Date(), 55.f, 170));
+        group.addStudent(new Student("1A", "1B", "2C", new Date(), 33.f, 180));
+        assertEquals(2, group.getStudents().size());
+        group.deleteStudentByIndex(2);
+    }
+
+    @Test
+    public void testDeleteStudentByIndexNegativeIndex() {
+        Group group = new Group();
+        Student student = new Student("0A", "B", "1C", new Date(), 55.f, 170);
+        group.addStudent(student);
+        assertEquals(1, group.getStudents().size());
+        group.deleteStudentByIndex(-1);
+        assertTrue(group.getStudents().contains(student));
+    }
 }
