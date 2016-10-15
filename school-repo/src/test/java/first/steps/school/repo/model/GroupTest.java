@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class GroupTest {
 
     @Test
-    public void TestAddingStudent() {
+    public void testAddingStudent() {
         List<Student> students1 = new ArrayList<Student>();
         students1.add(new Student("A", "B", "1C", new Date(), 55.f, 170));
         Group myGroup = new Group();
@@ -24,7 +24,7 @@ public class GroupTest {
 
 
     @Test
-    public void TestAddStudentValidationForNullValue() {
+    public void testAddStudentValidationForNullValue() {
         List<Student> students1 = new ArrayList<Student>();
         students1.add(new Student("A", "B", "1C", new Date(), 55.f, 170));
         Group myGroup = new Group();
@@ -33,7 +33,7 @@ public class GroupTest {
     }
 
     @Test
-    public void TestDeleteAllStudents() {
+    public void testDeleteAllStudents() {
         Group myGroup = new Group();
         myGroup.addStudent(new Student("0A", "B", "1C", new Date(), 55.f, 170));
         myGroup.addStudent(new Student("1A", "B", "1C", new Date(), 55.f, 170));
