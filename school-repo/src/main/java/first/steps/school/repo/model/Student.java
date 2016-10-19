@@ -50,24 +50,21 @@ public class Student {
 
     public void setFirstName(String firstName) {
         if (firstName.length() > 50) {
-            System.out.println("First Name should contain less than 50 characters. First Name: [" + firstName + "]; length = " + firstName.length());
-            return;
+            throw new IllegalArgumentException("First Name should contain less than 50 characters. First Name: [" + firstName + "]; length = " + firstName.length());
         }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
         if (lastName.length() > 30) {
-            System.out.println("Last Name should contain less than 30 characters. Last Name: [" + lastName + "]; length = " + lastName.length());
-            return;
+            throw new IllegalArgumentException("Last Name should contain less than 30 characters. Last Name: [" + lastName + "]; length = " + lastName.length());
         }
         this.lastName = lastName;
     }
 
     public void setClassName(String className) {
         if (className.length() != 2) {
-            System.out.println("Class should contain only 2 characters. Class: [" + className + "]");
-            return;
+            throw new IllegalArgumentException("Class should contain only 2 characters. Class: [" + className + "]");
         }
         this.className = className;
     }
@@ -78,16 +75,14 @@ public class Student {
 
     public void setWeight(float weight) {
         if (weight <= 0 || weight > 200) {
-            System.out.println("Weight value should be between 0 and 200 kg. Weight = " + weight);
-            return;
+            throw new IllegalArgumentException("Weight value should be between 0 and 200 kg. Weight = " + weight);
         }
         this.weight = weight;
     }
 
     public void setHeight(int height) {
         if (height <= 0 || height > 300) {
-            System.out.println("Height value should be between 0 and 300. Height = " + height);
-            return;
+            throw new IllegalArgumentException("Height value should be between 0 and 300. Height = " + height);
         }
         this.height = height;
     }

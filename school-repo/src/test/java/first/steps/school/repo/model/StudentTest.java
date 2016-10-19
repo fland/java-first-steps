@@ -20,7 +20,7 @@ public class StudentTest {
         assertEquals("Mariia", student.getFirstName());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetFirstNameExceedingMaxLength() {
         Student student = new Student("Anastasiia", "Mor", "B1", new Date(), 60, 170);
         assertEquals("Anastasiia", student.getFirstName());
@@ -36,7 +36,7 @@ public class StudentTest {
         assertEquals("Johnson", student.getLastName());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetLastNameExceedingMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("Mordovets", student.getLastName());
@@ -52,7 +52,7 @@ public class StudentTest {
         assertEquals("A9", student.getClassName());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetClassNameExceedingMaxLength() {
         Student student = new Student("Asya", "Mordovets", "B1", new Date(), 60, 170);
         assertEquals("B1", student.getClassName());
@@ -68,23 +68,23 @@ public class StudentTest {
         assertEquals(50, student.getWeight(), 0.001);
     }
 
-    @Test
-    public void testSetWeightNegativeValue(){
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetWeightNegativeValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(60, student.getWeight(), 0.001);
         student.setWeight(-10);
         assertEquals(60, student.getWeight(), 0.001);
     }
 
-    @Test
-    public void testSetWeightZeroValue(){
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetWeightZeroValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(60, student.getWeight(), 0.001);
         student.setWeight(0);
         assertEquals(60, student.getWeight(), 0.001);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetWeightExceedingMaxValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(60, student.getWeight(), 0.001);
@@ -100,7 +100,7 @@ public class StudentTest {
         assertEquals(100, student.getHeight());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetHeightNegativeValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(170, student.getHeight());
@@ -108,7 +108,7 @@ public class StudentTest {
         assertEquals(170, student.getHeight());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetHeightZeroValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(170, student.getHeight());
@@ -116,7 +116,7 @@ public class StudentTest {
         assertEquals(170, student.getHeight());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testSetHeightExceedingMaxValue() {
         Student student = new Student("Asya", "Mor", "B1", new Date(), 60, 170);
         assertEquals(170, student.getHeight());

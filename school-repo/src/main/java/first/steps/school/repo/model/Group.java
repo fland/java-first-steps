@@ -25,8 +25,7 @@ public class Group {
 
     public void addStudent(Student student) {
         if (student == null) {
-            System.out.println("Student shouldn't be null");
-            return;
+            throw new NullPointerException("Student shouldn't be null");
         }
         students.add(student);
     }
@@ -37,8 +36,7 @@ public class Group {
 
     public void deleteStudentByIndex(int index) {
         if (index < 0) {
-            System.out.println("Index should be >= 0. Index = [" + index + "]");
-            return;
+            throw new IndexOutOfBoundsException("Index should be >= 0. Index = [" + index + "]");
         }
         students.remove(index);
     }
