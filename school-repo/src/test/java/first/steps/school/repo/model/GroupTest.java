@@ -41,7 +41,7 @@ public class GroupTest {
         assertTrue(expectedStudents.containsAll(group.getStudents()));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testAddStudentAddingNullValue() {
         Group group = new Group();
         assertTrue(group.getStudents().isEmpty());
@@ -79,7 +79,7 @@ public class GroupTest {
         group.deleteStudentByIndex(2);
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDeleteStudentByIndexNegativeIndex() {
         Group group = new Group();
         Student student = new Student("0A", "B", "1C", new Date(), 55.f, 170);
